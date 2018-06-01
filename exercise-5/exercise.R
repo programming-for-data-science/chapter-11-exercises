@@ -2,7 +2,7 @@
 
 # Install the `"nycflights13"` package. Load (`library()`) the package.
 # You'll also need to load `dplyr`
-#install.packages("nycflights13")  # should be done already
+# install.packages("nycflights13")  # should be done already
 library("nycflights13")
 library("dplyr")
 
@@ -11,7 +11,7 @@ library("dplyr")
 # Hint: you'll have to perform a grouping operation then summarizing your data
 dep_delay_by_month <- flights %>%
   group_by(month) %>%
-  summarize(delay = mean(dep_delay, na.rm=TRUE))
+  summarize(delay = mean(dep_delay, na.rm = TRUE))
 dep_delay_by_month
 
 # Which month had the greatest average departure delay?
@@ -27,16 +27,16 @@ plot(dep_delay_by_month)
 # You can use the `head()` function to view just the first few rows
 arr_delay_by_month <- flights %>%
   group_by(dest) %>%
-  summarise(delay = mean(arr_delay, na.rm=TRUE)) %>%
+  summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
   arrange(-delay)
 head(arr_delay_by_month)
 
 # You can look up these airports in the `airports` data frame!
-filter(airports, faa == arr_delay_by_month$dest[1])  # for example
+filter(airports, faa == arr_delay_by_month$dest[1]) # for example
 
 # Which city was flown to with the highest average speed?
 city_fasted_speed <- flights %>%
-  mutate(speed = distance/air_time * 60) %>%
+  mutate(speed = distance / air_time * 60) %>%
   group_by(dest) %>%
   summarise(avg_speed = mean(speed, na.rm = TRUE)) %>%
   filter(avg_speed == max(avg_speed, na.rm = TRUE))

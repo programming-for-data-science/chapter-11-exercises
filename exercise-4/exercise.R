@@ -9,7 +9,7 @@ library(dplyr)
 # The data frame `flights` should now be accessible to you.
 # Use functions to inspect it: how many rows and columns does it have?
 # What are the names of the columns?
-# Use `??flights` to search for documentation on the data set (for what the 
+# Use `??flights` to search for documentation on the data set (for what the
 # columns represent)
 nrow(flights)
 ncol(flights)
@@ -35,19 +35,19 @@ hist(flights$gain_in_air)
 
 # On average, did flights gain or lose time?
 # Note: use the `na.rm = TRUE` argument to remove NA values from your aggregation
-mean(flights$gain_in_air, na.rm = TRUE)  # Gained 5 minutes!
+mean(flights$gain_in_air, na.rm = TRUE) # Gained 5 minutes!
 
 # Create a data.frame of flights headed to SeaTac ('SEA'), only including the
 # origin, destination, and the "gain_in_air" column you just created
-to_sea <- flights %>% select(origin, dest, gain_in_air) %>% filter(dest == 'SEA')
+to_sea <- flights %>% select(origin, dest, gain_in_air) %>% filter(dest == "SEA")
 
 # On average, did flights to SeaTac gain or loose time?
-mean(to_sea$gain_in_air, na.rm = TRUE)  # Gained 11 minutes!
+mean(to_sea$gain_in_air, na.rm = TRUE) # Gained 11 minutes!
 
 # Consider flights from JFK to SEA. What was the average, min, and max air time
 # of those flights? Bonus: use pipes to answer this question in one statement
 # (without showing any other data)!
-filter(flights, origin=="JFK", dest=="SEA") %>%
+filter(flights, origin == "JFK", dest == "SEA") %>%
   summarize(
     avg_air_time = mean(air_time, na.rm = TRUE),
     max_air_time = max(air_time, na.rm = TRUE),
