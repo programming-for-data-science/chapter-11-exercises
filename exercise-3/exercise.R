@@ -7,7 +7,7 @@ library("dplyr")
 # Install (if needed) and load the "fueleconomy" package
 #install.packages('devtools')
 #devtools::install_github("hadley/fueleconomy")
-library(fueleconomy)
+library("fueleconomy")
 
 # Which 2015 Acura model has the best hwy MGH? (Use dplyr, but without method
 # chaining or pipes--use temporary variables!)

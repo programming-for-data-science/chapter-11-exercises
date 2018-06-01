@@ -1,6 +1,6 @@
 # Exercise 7: using dplyr on external data
 
-# Load the dplyr library
+# Load the `dplyr` library
 
 
 # Use the `read.csv()` function to read in the included data set. Remember to

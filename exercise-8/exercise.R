@@ -1,6 +1,6 @@
 # Exercise 8: exploring data sets
 
-# Load the dplyr library
+# Load the `dplyr` library
 
 
 # Read in the data (from `data/pupulitzer-circulation-data.csv`). Remember to 
